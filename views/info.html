@@ -5,6 +5,38 @@
     <title>Info</title>
 </head>
 <body>
+        <h1>Information</h1>
+
+    <h2>{{ @title }}</h2>
+
+    <p>You are logged in as {{ @username }}.</p>
+
+    <p>I like the color {{ @color }}.</p>
+
+    <p>The circumference of the Radius: {{ @radius }} is {{ @radius * 3.14}}. </p>
+
+    <h3>Fruits</h3>
+        <repeat group="{{ @fruits }}" value="{{ @fruit }}">
+            <p>{{ @fruit }}</p>
+        </repeat>
+
+    <h3>Bookmarks</h3>
+        <ul>
+    <repeat group="{{ @bookmarks }}" value="{{ @bookmark }}">
+
+            <li>
+               <a href=" {{ @bookmark }} ">{{ @bookmark }}</a>
+            </li>
+
+    </repeat>
+        </ul>
+
+    <h3>Desserts</h3>
+    <form>
+        <repeat group="{{ @desserts }}" key="{{ @val }}"  value="{{ @text }}">
+            <input type="checkbox"  value="{{ @val }} ">{{ @text }} <br>
+        </repeat>
+    </form>
 
 </body>
 </html>
